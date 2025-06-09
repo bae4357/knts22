@@ -20,7 +20,8 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     SAMPLE_TOPIC = args.topic
-    SAMPLE_FILE_NAME = "C:/Users/bsh/Text-To-Video-AI/audio1_fixed.wav"
+    # SAMPLE_FILE_NAME = "C:/Users/bsh/Text-To-Video-AI/audio1_fixed.wav"
+    SAMPLE_FILE_NAME = "./audio1_fixed.wav"
     VIDEO_SERVER = "pexel"
 
     response = generate_script(SAMPLE_TOPIC)
@@ -41,6 +42,10 @@ if __name__ == "__main__":
     else:
         print("No background video")
 
+    if not background_video_urls:
+        print("No background video found. Skipping video generation.")
+        exit(1)
+    
     background_video_urls = merge_empty_intervals(background_video_urls)
 
     if background_video_urls is not None:

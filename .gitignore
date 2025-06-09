@@ -1,4 +1,10 @@
 .logs/
-venv/
+.ipynb_checkpoints/
+.gitignore
+app_org.py
+audio1_fixed.wav
+rendered_video.mp4
+api_keys.json
 __pycache__/
-.DS_Store
+utility/script/script_generator_org.py
+**/.ipynb_checkpoints/
